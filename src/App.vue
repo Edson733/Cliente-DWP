@@ -25,8 +25,8 @@
     </b-row>
 
     <b-row>
-      <b-col sm="3">
-        <b-sidebar z-index="-1" id="sidebar" shadow visible no-close-on-route-change no-header-close>
+      <b-col md="3">
+        <b-sidebar id="sidebar" z-index="-1" shadow visible no-close-on-route-change no-header-close>
           <b-nav vertical class="pt-5">
             <b-nav-item>
               <b-link :to="{ name: 'reservasvuelo' }">Reservas de Vuelo</b-link>
@@ -41,7 +41,7 @@
         </b-sidebar>
       </b-col>
 
-      <b-col>
+      <b-col md="9">
         <router-view></router-view>
       </b-col>
     </b-row>
