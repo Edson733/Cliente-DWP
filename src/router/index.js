@@ -4,23 +4,27 @@ import Vue from "vue";
 Vue.use(VueRouter);
 
 const routes = [
+    //La ruta base
     {
         path: '/',
-        redirect: '/inicio'
+        component: () => import('../components/LandPage.vue')
     },
     {
-        path: '/',
-        component: {
-            render(c) {
-                return c('router-view');
-            },
-        },
+        path: '/formulario',
+        name: 'formulario',
+        component: () => import('../components/Formulario.vue')
+    },
+    //Las rutas asociadas a los componentes
+    {
+        path: '*',
+        component: () => import('../views/ErrorPages/Error404.vue')
+    },
+    {
+        path: '/inicio',
+        name: 'inicio',
+        component: () => import('../components/Inicio.vue'),
+        //Los componentes que se renderizan en router-vue
         children: [
-            {
-                path: '/inicio',
-                name: 'inicio',
-                component: () => import('../components/Inicio.vue')
-            },
             {
                 path: '/reservasvuelo',
                 name: 'reservasvuelo',
@@ -50,7 +54,7 @@ const routes = [
                 path: '/proximosvuelos',
                 name: 'proximosvuelos',
                 component: () => import('../components/ProximosVuelos.vue')
-            }
+            },
         ]
     }
 ]
