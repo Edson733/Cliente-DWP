@@ -18,6 +18,12 @@
               <b-nav-item>
                 <b-link :to="{ name: 'vueloscancelados' }">Vuelos Cancelados</b-link>
               </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: 'formulario' }">Formulario</b-link>
+              </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: '/' }">LandPage</b-link>
+              </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>

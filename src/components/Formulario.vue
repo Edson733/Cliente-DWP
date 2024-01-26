@@ -34,7 +34,8 @@
           <b-form-group id="imagen-group" class="mt-3" label="Selecciona una Fotografia (PNG):" label-for="imagen" :state="validarImagen ? null : false">
             <b-form-file id="imagen" v-model="imagen" type="file" accept=".png" @change="handleFileChange" required></b-form-file>
           </b-form-group>
-          <b-button class="mt-3" type="submit" variant="success">Enviar</b-button>
+          <b-button class="mt-3" type="submit" variant="success">Enviar</b-button><br>
+          <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </b-form>
       </b-card>
     </div>

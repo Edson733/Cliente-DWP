@@ -1,5 +1,8 @@
 <template>
-  <h1>LandPage</h1>
+  <div>
+    <h1>LandPage</h1>
+    <b-link :to="{ name: 'formulario' }">Formulario</b-link>
+  </div>
 </template>
 
 <script>
