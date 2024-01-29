@@ -14,6 +14,11 @@ const routes = [
         name: 'formulario',
         component: () => import('../components/Formulario.vue')
     },
+    {
+        path: '/paginacion',
+        name: 'paginacion',
+        component: () => import('../components/Persona.vue')
+    },
     //Las rutas asociadas a los componentes
     {
         path: '*',
