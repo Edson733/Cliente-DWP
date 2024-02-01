@@ -1,15 +1,15 @@
 <template>
-  <b-conteiner>
+  <b-container>
     <div class="py-5 px-5">
       <h1 class="text-center">Formulario</h1>
       <b-card>
-        <b-form @submit.prevent="validarForm" action="https://vuejs.org/" method="post" novalidate>
-          <b-alert variant="danger" dismissible :show="errors.length > 0">
+        <b-form @submit.prevent="validarForm" action="" method="post" novalidate>
+          <p v-if="errors.length">
             <b>{{ errors.length > 1 ? "Por favor corrige los siguientes errores: " : "Por favor corrige el siguiente error: " }}</b>
             <ul>
-              <li v-for="error in errors" :key="error">{{ error }}</li>
+              <li v-for="error in errors" :key="error.index">{{ error }}</li>
             </ul>
-          </b-alert>
+          </p>
           <b-form-group id="nombre-group" label="Nombre(s):" label-for="nombre" :state="nombre ? null : false">
             <b-form-input id="nombre" v-model="nombre" type="text" required></b-form-input>
           </b-form-group>
@@ -34,12 +34,12 @@
           <b-form-group id="imagen-group" class="mt-3" label="Selecciona una Fotografia (PNG):" label-for="imagen" :state="validarImagen ? null : false">
             <b-form-file id="imagen" v-model="imagen" type="file" accept=".png" @change="handleFileChange" required></b-form-file>
           </b-form-group>
-          <b-button class="mt-3" type="submit" variant="success">Enviar</b-button><br>
+          <b-button class="mt-3" type="submit" variant="outline-success">Enviar</b-button><br>
           <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </b-form>
       </b-card>
     </div>
-  </b-conteiner>
+  </b-container>
 </template>
 
 <script>
@@ -89,8 +89,10 @@
           } else {
             this.validarEdad = edad;
           }
-          if (this.validarEdad < 18) {
-            this.errors.push("La edad debe ser 18 o más.");
+          if (fechaNacimiento > Date.now()) {
+            this.errors.push("Fecha de Nacimiento no puede ser mayor a la fecha actual.");
+          }else if (this.validarEdad < 18) {
+            this.errors.push("La edad debe ser de 18 o más.");
           }
         }
 
@@ -100,12 +102,16 @@
           this.errors.push("Por favor ingresa una dirección de correo válida.");
         }
 
-        if (!this.numero || this.numero.length < 10) {
-          this.errors.push("El número de teléfono debe tener al menos 10 caracteres.");
+        if (!this.numero) {
+          this.errors.push("El número de teléfono es obligatorio.");
+        } else if (this.numero.length != 10) {
+          this.errors.push("El número de teléfono debe tener al menos 10 digitos.");
         }
 
-        if (!this.imagen || !this.validarImagen) {
-          this.errors.push("La foto es obligatoria y debe tener menos de 3 MB.");
+        if (!this.imagen) {
+          this.errors.push("La foto es obligatoria.");
+        } else if (!this.validarImagen) {
+          this.errors.push("La foto debe tener menos de 3 MB.");
         }
 
         if (!this.errors.length) {
