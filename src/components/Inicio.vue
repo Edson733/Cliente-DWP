@@ -10,7 +10,7 @@
           <b-collapse id="navbar-nav" is-nav>
             <b-navbar-nav class="ml-auto">
               <b-nav-item>
-                <b-link :to="{ name: 'reservasvuelo' }">Reservas de Vuelo</b-link>
+                <b-link :to="{ name: 'paginacion' }">Paginacion</b-link>
               </b-nav-item>
               <b-nav-item>
                 <b-link :to="{ name: 'vuelosdisponibles' }">Vuelos Disponibles</b-link>

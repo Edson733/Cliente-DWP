@@ -21,6 +21,7 @@
                 aria-controls="my-table"
             ></b-pagination>
             <p class="mt-3">Current Page: {{ currentPage }}</p>
+            <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </div>
     </b-container>
 </template>
@@ -33,7 +34,7 @@
             return {
                 sortBy: "name",
                 sortDesc: false,
-                perPage: 3,
+                perPage: 5,
                 currentPage: 1,
                 items: [],
                 fields: [
