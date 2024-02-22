@@ -19,6 +19,11 @@ const routes = [
         name: 'paginacion',
         component: () => import('../components/Persona.vue')
     },
+    {
+        path: '/captcha',
+        name: 'captcha',
+        component: () => import('../components/Captcha.vue')
+    },
     //Las rutas asociadas a los componentes
     {
         path: '*',
