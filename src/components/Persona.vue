@@ -21,7 +21,6 @@
                 aria-controls="my-table"
             ></b-pagination>
             <p class="mt-3">Current Page: {{ currentPage }}</p>
-            <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </div>
     </b-container>
 </template>

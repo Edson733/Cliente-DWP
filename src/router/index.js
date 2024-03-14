@@ -9,21 +9,6 @@ const routes = [
         path: '/',
         component: () => import('../components/LandPage.vue')
     },
-    {
-        path: '/formulario',
-        name: 'formulario',
-        component: () => import('../components/Formulario.vue')
-    },
-    {
-        path: '/paginacion',
-        name: 'paginacion',
-        component: () => import('../components/Persona.vue')
-    },
-    {
-        path: '/captcha',
-        name: 'captcha',
-        component: () => import('../components/Captcha.vue')
-    },
     //Las rutas asociadas a los componentes
     {
         path: '*',
@@ -36,34 +21,34 @@ const routes = [
         //Los componentes que se renderizan en router-vue
         children: [
             {
-                path: '/reservasvuelo',
-                name: 'reservasvuelo',
-                component: () => import('../components/ReservasVuelo.vue')
+                path: '/formulario',
+                name: 'formulario',
+                component: () => import('../components/Formulario.vue')
             },
             {
-                path: '/vuelosdisponibles',
-                name: 'vuelosdisponibles',
-                component: () => import('../components/VuelosDisponibles.vue')
+                path: '/captcha',
+                name: 'captcha',
+                component: () => import('../components/Captcha.vue')
             },
             {
-                path: '/vueloscancelados',
-                name: 'vueloscancelados',
-                component: () => import('../components/VuelosCancelados.vue')
+                path: '/paginacion',
+                name: 'paginacion',
+                component: () => import('../components/Persona.vue')
             },
             {
-                path: '/asientosreservados',
-                name: 'asientosreservados',
-                component: () => import('../components/AsientosReservados.vue')
+                path: '/registro',
+                name: 'registro',
+                component: () => import('../components/UserRegistration.vue')
             },
             {
-                path: '/lineasvuelo',
-                name: 'lineasvuelo',
-                component: () => import('../components/LineasVuelo.vue')
+                path: '/login',
+                name: 'login',
+                component: () => import('../components/UserLogin.vue')
             },
             {
-                path: '/proximosvuelos',
-                name: 'proximosvuelos',
-                component: () => import('../components/ProximosVuelos.vue')
+                path: '/userAuth',
+                name: 'auth',
+                component: () => import('../components/UserAuth.vue')
             },
         ]
     }

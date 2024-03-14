@@ -8,7 +8,6 @@
 
             <!-- Botón de envío -->
             <b-button type="submit">Enviar</b-button><br>
-            <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </b-form>
     </b-container>
 </template>

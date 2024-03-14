@@ -13,40 +13,26 @@
                 <b-link :to="{ name: 'paginacion' }">Paginacion</b-link>
               </b-nav-item>
               <b-nav-item>
-                <b-link :to="{ name: 'vuelosdisponibles' }">Vuelos Disponibles</b-link>
-              </b-nav-item>
-              <b-nav-item>
-                <b-link :to="{ name: 'vueloscancelados' }">Vuelos Cancelados</b-link>
-              </b-nav-item>
-              <b-nav-item>
                 <b-link :to="{ name: 'formulario' }">Formulario</b-link>
               </b-nav-item>
               <b-nav-item>
-                <b-link :to="{ name: '/' }">LandPage</b-link>
+                <b-link :to="{ name: 'captcha' }">Captcha</b-link>
+              </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: 'registro' }">Registro</b-link>
+              </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: 'login' }">Login</b-link>
+              </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: 'auth' }">Auth</b-link>
               </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
       </b-col>
     </b-row>
-
     <b-row>
-      <b-col md="3">
-        <b-sidebar id="sidebar" z-index="-1" shadow visible no-close-on-route-change no-header-close>
-          <b-nav vertical class="pt-5">
-            <b-nav-item>
-              <b-link :to="{ name: 'reservasvuelo' }">Reservas de Vuelo</b-link>
-            </b-nav-item>
-            <b-nav-item>
-              <b-link :to="{ name: 'vuelosdisponibles' }">Vuelos Disponibles</b-link>
-            </b-nav-item>
-            <b-nav-item>
-              <b-link :to="{ name: 'vueloscancelados' }">Vuelos Cancelados</b-link>
-            </b-nav-item>
-          </b-nav>
-        </b-sidebar>
-      </b-col>
-
       <b-col md="9">
         <router-view/>
       </b-col>

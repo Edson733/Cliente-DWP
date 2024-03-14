@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>LandPage</h1>
-    <b-link :to="{ name: 'formulario' }">Formulario</b-link><br>
-    <b-link :to="{ name: 'inicio' }">Inicio</b-link><br>
-    <b-link :to="{ name: 'captcha' }">Captcha</b-link>
+    <b-link :to="{ name: 'inicio' }">Inicio</b-link>
   </div>
 </template>
 

@@ -35,7 +35,6 @@
             <b-form-file id="imagen" v-model="imagen" type="file" accept=".png" @change="handleFileChange" required></b-form-file>
           </b-form-group>
           <b-button class="mt-3" type="submit" variant="outline-success">Enviar</b-button><br>
-          <b-link :to="{ name: 'inicio' }">Inicio</b-link>
         </b-form>
       </b-card>
     </div>
